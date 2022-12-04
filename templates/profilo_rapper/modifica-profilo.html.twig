@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div class="container padding-mobile" style="margin-top: 1%">
+
+
+    <section class="section">
+        <h1 class="title is-2">Immagine Profilo</h1>
+        <h1 class="title is-5">Carica l'immagine che verrà visualizzata sul profilo</h1>
+        <input type="file">
+
+        <article class="message is-dark">
+            <div class="message-body">
+                L'immagine deve rispettare lo standard di 1280x720px
+            </div>
+        </article>
+    </section>
+
+    <section class="section">
+        <h1 class="title is-2">Informazioni personali</h1>
+        <div class="tile is-ancestor">
+
+            <div class="tile is-4 is-vertical is-parent">
+
+                <div class="tile is-child">
+                        <input class="input modifica-profilo-input" type="text" placeholder="Informazione Personale">
+                        <input class="input modifica-profilo-input" type="text" placeholder="Informazione Personale">
+                        <input class="input modifica-profilo-input" type="text" placeholder="Informazione Personale">
+                        <input class="input modifica-profilo-input" type="text" placeholder="Informazione Personale">
+                </div>
+            </div>
+
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <textarea class="textarea" placeholder="Una breve descrizione di ciò che hai fatto"></textarea>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section">
+        <h1 class="title is-2">Carica i tuoi Album da Spotify</h1>
+    </section>
+
+    <section class="section">
+        <h1 class="title is-2">Carica un tuo video Youtube</h1>
+        <input class="input modifica-profilo-input" type="text" placeholder="Url">
+    </section>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <script>
+        const inputElement = document.querySelector('input[type="file"]');
+
+        // Create a FilePond instance
+        const pond = FilePond.create(inputElement);
+    </script>
+{% endblock %}
