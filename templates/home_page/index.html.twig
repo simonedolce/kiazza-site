@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}KIAZZA MOB ENT.®{% endblock %}
+
+{% block body %}
+
+
+
+<div class="container padding-mobile">
+
+    <section class="hero is-small" style="background-color: black; border-radius: 5px; margin-top: 1%">
+        <div class="hero-body">
+            {% include('elements/carosello.html.twig') %}
+        </div>
+    </section>
+    <div class="tile is-ancestor">
+        <div class="tile" style="padding: 15px">
+            {% include('elements/card.html.twig') %}
+        </div>
+        <div class="tile" style="padding: 15px">
+            {% include('elements/card.html.twig') %}
+        </div>
+    </div>
+
+
+    <button style="float: right; margin-top: 1%" class="button is-primary">Leggi tutti i post</button>
+</div>
+
+
+    <script src="js/carousel.js"></script>
+
+{% endblock %}

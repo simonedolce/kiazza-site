@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfiloRapperController!{% endblock %}
+
+{% block body %}
+    <div class="container padding-mobile" style="margin-top: 1%">
+
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8">
+                <div class="tile">
+                    <div class="tile is-parent">
+                        <article class="tile is-child">
+
+                            <div>
+                                <figure class="image is-16by9">
+                                    <img class="has-ratio" src="https://i.ytimg.com/vi/c66TfiSbpiU/maxresdefault.jpg" width="240" height="240">
+                                </figure>
+                            </div>
+                        </article>
+                        <!--
+                        <div class="tile is-child" style="">
+                            <p class="title">Sonny Purini</p>
+                            <p class="subtitle">Digital Mafia / Kiazza di Sangue</p>
+                        </div>
+                        -->
+                    </div>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child">
+                        <div class="">
+                            <figure class="image is-16by9">
+                                <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/W_LS_PKqEoQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </figure>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="tile is-parent">
+                <div class="tile is-vertical is-8">
+                    <article class="tile is-child">
+                        <div class="content">
+                            <p class="" style="text-align: left">Bio:
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Mauris in ultrices lectus. Etiam eros dui, laoreet ac feugiat non,
+                                mollis id lorem. Pellentesque sem est, ornare in laoreet vitae,
+                                viverra eu metus. Duis in nibh dui. Duis euismod eu quam ut pretium.
+                                Donec ut egestas neque. Sed luctus ut lectus venenatis sagittis.
+                                Aliquam a neque eu tellus laoreet cursus. Vivamus vitae ullamcorper
+                                ipsum, quis faucibus leo. Integer consectetur massa id elit convallis,
+                                sed consequat mi eleifend. Vivamus accumsan vitae tellus tristique faucibus.
+                                Vestibulum elit justo, ultrices a tortor nec, interdum interdum ex.
+                                Aliquam at lorem et enim congue gravida.
+                                Cras sit amet tortor ut ante vulputate elementum hendrerit at lorem. Aenean convallis lorem sed maximus semper.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="tile is-child">
+                        <div class="content">
+                            <p class="title" style="text-align: center">Album/Singoli:</p>
+                            <div class="content">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7nv1acHdrYXcfLkxVncgzv?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></iframe>
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1VQpxFFAYMsUmhsAnG4ls0?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

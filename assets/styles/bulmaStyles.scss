@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// variabili dei colori del brand
+// Color Palette of the application
+$dirty-white: #fffffe;
+$black: #0f0e17;
+$orange: #ff8906;
+$grey: #a7a9be;
+
+
+//Over-Write dei componenti di bulma
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+$card-background-color: $orange;
+$primary: $orange;
+
+$navbar-background-color : $black;
+$navbar-dropdown-background-color:$black;
+$navbar-item-color:$dirty-white;
+$navbar-item-active-color:$black;
+
+$navbar-item-hover-color:$black;
+$navbar-dropdown-item-hover-color:$black;
+$navbar-item-hover-background-color:$dirty-white;
+
+
+
+
+// Import only what you need from Bulma
+
+@import "~bulma/sass/elements/_all.sass";
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/form/_all.sass";
+@import "~bulma/sass/components/navbar.sass";
+@import "~bulma/sass/components/card.sass";
+@import "~bulma/sass/components/message.sass";
+@import "~bulma/sass/layout/hero.sass";
+@import "~bulma/sass/layout/section.sass";
+@import "~bulma/sass/layout/_all.sass";
+@import "~bulma/sass/elements/content.sass";
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/grid/columns.sass";
+@import "~bulma/sass/grid/tiles.sass";
+

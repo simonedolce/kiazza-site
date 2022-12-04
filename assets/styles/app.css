@@ -1,0 +1,75 @@
+.container-banner {
+    height: 305px;
+    overflow: hidden;
+}
+
+.image-container {
+    float: left;
+    width: 40%;
+}
+.text-container {
+    float: right;
+    width: 50%;
+}
+
+.is-transparent {
+    width: 30rem;
+    height: 20rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+}
+
+.is-transparent:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(50px);
+    margin: -20px;
+}
+.display-block{
+    display: inline-block;
+}
+
+.post{
+    width: 49%;
+    margin-top: 1%;
+}
+
+
+.modifica-profilo-input{
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .padding-mobile {
+        padding-right: 32px;
+        padding-left: 32px;
+    }
+    .container-banner {
+        height: auto;
+        overflow: hidden;
+    }
+    .image-container {
+        float: none;
+        width: 100%;
+    }
+    .text-container {
+        float: none;
+        width: 100%;
+        height: 200px;
+    }
+
+    .title-article-mobile{
+        font-size: 1rem;
+    }
+}
