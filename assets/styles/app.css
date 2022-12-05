@@ -2,7 +2,9 @@
     height: 305px;
     overflow: hidden;
 }
-
+.modal-title{
+    color: #0a090f;
+}
 .biografia-artista{
     color: #fffffe;
 }
