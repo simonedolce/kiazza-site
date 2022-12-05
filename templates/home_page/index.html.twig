@@ -13,14 +13,21 @@
             {% include('elements/carosello.html.twig') %}
         </div>
     </section>
-    <div class="tile is-ancestor">
-        <div class="tile" style="padding: 15px">
-            {% include('elements/card.html.twig') %}
+
+    <section class="hero is-small" style="margin-top: 1%">
+
+        <div class="tile is-ancestor">
+            <div class="tile" style="padding: 15px">
+                {% include('elements/card.html.twig') %}
+            </div>
+
+            <div class="tile" style="padding: 15px">
+                {% include('elements/card.html.twig') %}
+            </div>
+
         </div>
-        <div class="tile" style="padding: 15px">
-            {% include('elements/card.html.twig') %}
-        </div>
-    </div>
+    </section>
+
 
 
     <button style="float: right; margin-top: 1%" class="button is-primary">Leggi tutti i post</button>

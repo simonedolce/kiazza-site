@@ -3,6 +3,10 @@
     overflow: hidden;
 }
 
+.biografia-artista{
+    color: #fffffe;
+}
+
 .image-container {
     float: left;
     width: 40%;
