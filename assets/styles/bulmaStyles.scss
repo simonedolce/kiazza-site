@@ -5,35 +5,44 @@
 
 // variabili dei colori del brand
 // Color Palette of the application
-$dirty-white: #fffffe;
-$black: #0f0e17;
-$orange: #ff8906;
-$grey: #a7a9be;
-
+$background:#1B1B1B;
+$background-dark:#101010;
+$headline:#dbdbdb;
+$paragraph:#dedede;
+$primary-color:#348587;
+$secondary-color:#dae8e8;
 
 //Over-Write dei componenti di bulma
+$body-background-color:$background;
+
+$primary: $primary-color;
+
+$card-background-color: $primary;
+
 $control-border-width: 2px;
 $input-shadow: none;
-$card-background-color: $orange;
-$primary: $orange;
 
-$input-placeholder-color:$black;
-$input-color:$black;
+$input-placeholder-color:$headline;
+$input-color:$headline;
 
 
-$navbar-background-color : $black;
-$navbar-dropdown-background-color:$black;
-$navbar-item-color:$dirty-white;
-$navbar-item-active-color:$black;
+$navbar-item-img-max-height:7.75rem;
 
-$navbar-item-hover-color:$black;
-$navbar-dropdown-item-hover-color:$black;
-$navbar-item-hover-background-color:$dirty-white;
+$navbar-background-color : $background;
+$navbar-dropdown-background-color:$background;
 
-$table-row-hover-background-color:$grey;
-$table-row-active-background-color:$grey;
+$navbar-item-color:$paragraph;
+$navbar-item-active-color:$paragraph;
+$navbar-item-hover-color:$paragraph;
+$navbar-dropdown-item-color:$background-dark;
+$navbar-dropdown-item-hover-color:$paragraph;
+$navbar-dropdown-item-active-background-color:$background-dark;
+$navbar-item-hover-background-color:$background-dark;
 
-$title-color: $dirty-white;
+$table-row-hover-background-color:$secondary-color;
+$table-row-active-background-color:$secondary-color;
+
+$title-color: $headline;
 
 
 

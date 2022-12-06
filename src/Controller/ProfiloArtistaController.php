@@ -23,4 +23,14 @@ class ProfiloArtistaController extends AbstractController
             'controller_name' => 'ProfiloArtistaController',
         ]);
     }
+
+
+    #[Route('/profilo/add-album', name: 'aggiungi-album')]
+    public function aggiungiAlbum(): Response
+    {
+
+        return $this->render('profilo_rapper/add-album.html.twig', [
+            'controller_name' => 'ProfiloArtistaController',
+        ]);
+    }
 }

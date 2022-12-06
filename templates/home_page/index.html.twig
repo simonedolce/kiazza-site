@@ -8,32 +8,22 @@
 
 <div class="container padding-mobile">
 
-    <section class="hero is-small" style="background-color: black; border-radius: 5px; margin-top: 1%">
+    <section class="hero is-small" style="border-radius: 5px; margin-top: 1%">
         <div class="hero-body">
             {% include('elements/carosello.html.twig') %}
         </div>
     </section>
 
-    <section class="hero is-small" style="margin-top: 1%">
+    <section class="hero is-large" style="margin-top: 1%">
+        <h1 class="title is-1">Chi siamo</h1>
 
-        <div class="tile is-ancestor">
-            <div class="tile" style="padding: 15px">
-                {% include('elements/card.html.twig') %}
-            </div>
-
-            <div class="tile" style="padding: 15px">
-                {% include('elements/card.html.twig') %}
-            </div>
-
-        </div>
     </section>
 
 
 
-    <button style="float: right; margin-top: 1%" class="button is-primary">Leggi tutti i post</button>
 </div>
 
 
-    <script src="js/carousel.js"></script>
+<script src="js/carousel.js"></script>
 
 {% endblock %}
