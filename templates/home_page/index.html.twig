@@ -6,24 +6,17 @@
 
 
 
+{% include('home_page/elements/carosello.html.twig') %}
+
 <div class="container padding-mobile">
-
-    <section class="hero is-small" style="border-radius: 5px; margin-top: 1%">
-        <div class="hero-body">
-            {% include('elements/carosello.html.twig') %}
-        </div>
-    </section>
-
-    <section class="hero is-large" style="margin-top: 1%">
-        <h1 class="title is-1">Chi siamo</h1>
-
-    </section>
-
-
-
+    {% include('home_page/elements/sections-1.html.twig') %}
 </div>
 
 
 <script src="js/carousel.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
 
 {% endblock %}

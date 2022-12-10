@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css?family=Inter:400,700');
+
+
 
 // variabili dei colori del brand
 // Color Palette of the application
@@ -44,6 +46,9 @@ $table-row-active-background-color:$secondary-color;
 
 $title-color: $headline;
 
+$tabs-toggle-link-active-background-color:$paragraph;
+$tabs-toggle-link-active-color:$background-dark;
+
 
 
 
@@ -57,6 +62,7 @@ $title-color: $headline;
 @import "~bulma/sass/components/modal.sass";
 @import "~bulma/sass/components/card.sass";
 @import "~bulma/sass/components/message.sass";
+@import "~bulma/sass/components/tabs.sass";
 @import "~bulma/sass/layout/hero.sass";
 @import "~bulma/sass/layout/section.sass";
 @import "~bulma/sass/layout/_all.sass";
@@ -64,4 +70,6 @@ $title-color: $headline;
 @import "~bulma/sass/utilities/_all.sass";
 @import "~bulma/sass/grid/columns.sass";
 @import "~bulma/sass/grid/tiles.sass";
+@import "~bulma/sass/elements/container";
+
 

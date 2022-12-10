@@ -1,0 +1,42 @@
+<div class="tabs is-toggle is-toggle-rounded">
+    <ul>
+        <li id="sp-tab" class="is-active">
+            <a>
+                <span class="icon is-small"><i class="fa-brands fa-spotify"></i></span>
+                <span>Spotify</span>
+            </a>
+        </li>
+        <li id="yt-tab">
+            <a>
+                <span class="icon is-small"><i class="fa-brands fa-youtube"></i></span>
+                <span>Youtube</span>
+            </a>
+        </li>
+        <li id="bc-tab">
+            <a>
+                <span class="icon is-small"><i class="fa-brands fa-bandcamp"></i></span>
+                <span>Bandcamp</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="box is-primary">
+    <input class="input">
+    <input class="input">
+    <input class="input">
+</div>
+
+<script>
+    let list = $('li');
+
+    list.on('click', function (){
+        toggleTabElements(list,$(this));
+        let id = $(this).attr('id');
+    });
+
+    function toggleTabElements(list,element){
+        list.attr('class', '');
+        $(element).attr('class', 'is-active');
+    }
+</script>

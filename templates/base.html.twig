@@ -16,12 +16,14 @@
             {{ encore_entry_link_tags('navbar') }}
             {{ encore_entry_link_tags('carousel') }}
             {% endif %}
+            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         {% endblock %}
 
         {% block javascripts %}
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
             {{ encore_entry_script_tags('carousel') }}
             <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
-            <script src="https://use.fontawesome.com/a6fb78d80a.js"></script>
+            <script src="https://kit.fontawesome.com/cd0ec1a7cb.js" crossorigin="anonymous"></script>
             <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
         {% endblock %}
