@@ -25,7 +25,7 @@ class ProfiloArtistaController extends AbstractController
     }
 
 
-    #[Route('/profilo/add-album', name: 'aggiungi-album')]
+    #[Route('/profilo/add-album', name: 'aggiungi_album')]
     public function aggiungiAlbum(): Response
     {
 

@@ -3,7 +3,44 @@
 {% block title %}Aggiungi Album{% endblock %}
 
 {% block body %}
-    <div class="container padding-mobile" style="display: grid;place-content: center">
-        {% include './elements/tabs.html.twig' %}
+    <div class="container padding-mobile">
+
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <div class="tile is-8 is-child">
+                    <figure class="image is-1by1">
+                        <img src="https://i.scdn.co/image/ab67616d0000b2733ef5f88bac451675d9f614d4">
+                    </figure>
+                </div>
+            </div>
+
+
+            <div class="tile is-parent is-vertical">
+                <div class="tile is-vertical">
+                    <h1 class="title is-3">Urls</h1>
+                    {% include('profilo_rapper/elements/inputs-sites.html.twig') %}
+                </div>
+
+                <div class="tile is-vertical">
+                    <h1 class="title is-3">Informazioni Album</h1>
+                    <div class="field">
+                        <div class="control">
+                            <input class="input is-large" type="text" placeholder="Nome Album">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input class="input is-large" type="text" placeholder="Numero Tracce">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tile is-1 is-child">
+                    <button class="button is-primary">Primary</button>
+
+                </div>
+            </div>
+
+        </div>
     </div>
 {% endblock %}
