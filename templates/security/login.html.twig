@@ -1,0 +1,54 @@
+{{ encore_entry_link_tags('Bulma') }}
+{{ encore_entry_link_tags('app') }}
+{{ encore_entry_link_tags('loginRegisterCss') }}
+
+{% block body %}
+<div class="container padding-mobile">
+    <section class="hero is-background is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-one-third ">
+                        <figure class="image is-4by3">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Gorgosaurus_BW_transparent.png">
+                        </figure>
+                    </div>
+                    <div class="column is-half ">
+                        <form action="" class="box" method="post">
+                            <div class="field">
+                                <label for="" class="label">Username</label>
+                                <div class="control has-icons-left">
+                                    <input type="text" name="login_form[username]" placeholder="es: Pinco_Pallino" class="input" required>
+                                    <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="" class="label">Password</label>
+                                <div class="control has-icons-left">
+                                    <input type="password" name="login_form[password]" placeholder="*******" class="input" required>
+                                    <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="" class="checkbox">
+                                    <input type="checkbox">
+                                    Remember me
+                                </label>
+                            </div>
+                            <input type="hidden" name="_csrf_token"
+                                   value="{{ csrf_token('authenticate') }}"
+                            >
+                            <div class="field">
+                                <button class="button is-success">
+                                    Login
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

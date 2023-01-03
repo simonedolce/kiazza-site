@@ -1,0 +1,50 @@
+{{ encore_entry_link_tags('Bulma') }}
+{{ encore_entry_link_tags('app') }}
+{{ encore_entry_link_tags('loginRegisterCss') }}
+{% block body %}
+    <div class="container padding-mobile">
+        <section class="hero is-background is-fullheight">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-centered">
+                        <div class="column is-one-third ">
+                            <figure class="image is-4by3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Gorgosaurus_BW_transparent.png">
+                            </figure>
+                        </div>
+                        <div class="column is-half ">
+                            {{ form_start(registrationForm,{'attr': {'class': 'box'}}) }}
+                                <div class="field">
+                                    <label for="" class="label">{{ form_label(registrationForm.username) }}</label>
+                                    <div class="control has-icons-left">
+                                        {{ form_widget(registrationForm.username) }}
+                                        <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="" class="label">{{ form_label(registrationForm.plainPassword) }}</label>
+                                    <div class="control has-icons-left">
+                                        {{ form_widget(registrationForm.plainPassword) }}
+                                        <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="" class="label">{{ form_label(registrationForm.plainPasswordConfirm) }}</label>
+                                    <div class="control has-icons-left">
+                                        {{ form_widget(registrationForm.plainPasswordConfirm) }}
+                                        <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <button type="submit" class="button is-success">
+                                        Registrati
+                                    </button>
+                                </div>
+                            {{ form_end(registrationForm) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
