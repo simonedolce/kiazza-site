@@ -36,6 +36,7 @@ Encore
     .addEntry('common', './assets/common.js')
     .addStyleEntry('Bulma', './assets/styles/bulmaStyles.scss')
     .addStyleEntry('appCss', './assets/styles/app.css')
+    .addStyleEntry('loginRegisterCss', './assets/styles/loginRegister.css')
     .addStyleEntry('navbar', './assets/styles/navbar.css')
     .addStyleEntry('carousel', './assets/styles/carousel.css')
 

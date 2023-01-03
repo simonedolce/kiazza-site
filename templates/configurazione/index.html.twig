@@ -27,7 +27,7 @@
         <section class="section">
             <h1 class="title is-2">Utenti attivi sul sistema</h1>
             <h1 class="title is-5">Visualizza informazioni riguardo agli utenti registrati sul sistema</h1>
-            {% include 'configurazione/elements/tabella-utenti.html.twig' %}
+            {% include 'configurazione/elements/tabella-utenti.html.twig' with {'users': users} %}
         </section>
 
         <section class="section">
@@ -35,7 +35,7 @@
             <h1 class="title is-5">Crea un codice autorizzazione e assegna un nome provvisorio all'utente</h1>
             <div class="box">
                 <button data-target="modal-aggiungi-cod-auth" class="js-modal-trigger button is-link aggiungi-user"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
-                {% include 'configurazione/elements/tabella-utenti-in-attesa.html.twig' %}
+                {% include 'configurazione/elements/tabella-utenti-in-attesa.html.twig' with {'codAuths': codAuths} %}
             </div>
         </section>
 
@@ -44,29 +44,29 @@
         <div class="modal-content">
             <div class="box modal-box">
 
+                {{ form_start(formCodAuth) }}
+                {{ form_label(formCodAuth.codice) }}
+                {{ form_widget(formCodAuth.codice, {'attr': {'readonly': 'readonly'}}) }}
+                {{ form_end(formCodAuth) }}
             </div>
-            <button id="add-cod-auth" class="button"><i class="fa fa-plus-circle" aria-hidden="true"></i>Aggiungi utente</button>
-
         </div>
-
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
 </div>
 
+
     <script>
         let modal = $('.modal-box');
+        let modalTitle = $('.modal-title');
         let subtitle = jQuery('<h1/>', {class:'title is-5 modal-title',text:'Inserisci un nome provvisorio per il tuo utente'});
-        let usernameCopy = jQuery('<input/>', {class: 'input username modal-input-usrn', placeholder: 'Nome Utente'});
-
         $('.js-modal-trigger').on('click', function(){
-            modal.empty();
+            modalTitle.empty();
             let codeAuth = makeAuthCode(6);
             let title = jQuery('<h1/>', {class:'title is-2 modal-title',text:'Il codice segreto per attivare l\'utenza è ' + codeAuth});
-            let authCodeCopy = jQuery('<input/>', {class: 'input cod-auth modal-input-auth', disabled:'disabled',placeholder: 'CodAuth', value:codeAuth});
-            title.appendTo(modal);
-            subtitle.appendTo(modal);
-            authCodeCopy.appendTo(modal)
-            usernameCopy.appendTo(modal);
+            let inputCodAuth = $("#cod_auth_form_codice");
+            inputCodAuth.val(codeAuth);
+            title.appendTo(modalTitle);
+            subtitle.appendTo(modalTitle);
         });
 
         $('#add-cod-auth').on('click', function (){
@@ -91,6 +91,7 @@
             }
             return result;
         }
+
 
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -151,5 +152,30 @@
             list.attr('class', '');
             $(element).attr('class', 'is-active');
         }
+
+        let buttonConferma = $('.conferma-elimina');
+        $('.elimina-cod-auth').on('click', function (){
+            let id = $(this).attr('id');
+            buttonConferma.attr('id', id);
+        });
+
+        buttonConferma.on('click', function (){
+            let id = $(this).attr('id');
+            ajaxDeleteCodAuth(id);
+        });
+
+
+        function ajaxDeleteCodAuth(id){
+            $.ajax({
+                url: "http://127.0.0.1:8000/ajax-elimina-cod-auth/" + id,
+                success: function (data){
+                    $('#tr-cod-auth-' + id).remove();
+                    $('#modal-conferma-eliminazione').removeClass('is-active')
+
+                }
+            });
+        }
+
+
     </script>
 {% endblock %}

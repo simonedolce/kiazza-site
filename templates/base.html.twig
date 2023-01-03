@@ -12,10 +12,8 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('Bulma') }}
             {{ encore_entry_link_tags('app') }}
-            {% if controller_name == 'HomePageController' %}
             {{ encore_entry_link_tags('navbar') }}
             {{ encore_entry_link_tags('carousel') }}
-            {% endif %}
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         {% endblock %}
 
@@ -25,7 +23,6 @@
             <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
             <script src="https://kit.fontawesome.com/cd0ec1a7cb.js" crossorigin="anonymous"></script>
             <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-
         {% endblock %}
     </head>
     <body>

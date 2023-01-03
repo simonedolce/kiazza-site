@@ -1,18 +1,20 @@
 <table class="table" style="width: 100%;border-radius: 4px;">
     <thead>
     <tr>
-        <td>Nome</td>
-        <td>Email</td>
-        <td>Post Pubblicati</td>
-        <td>Ultimo accesso</td>
+        <td>ID</td>
+        <td>Username</td>
+        <td>Ruoli</td>
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>Sonny Purini</td>
-        <td>simonedolce26@gmail.com</td>
-        <td>3</td>
-        <td>Oggi</td>
-    </tr>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.username }}</td>
+            {% if user.roles is not null %}
+                <td>{{ user.roles | join(',') }}</td>
+            {% endif %}
+        </tr>
+    {% endfor %}
     </tbody>
 </table>

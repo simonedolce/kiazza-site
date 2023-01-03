@@ -1,0 +1,40 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(-45deg,
+    #1b1b1b 0%,
+    #37393d 13%,
+    #505b62 25%,
+    #698086 38%,
+    #85a7a6 50%,
+    #698086 62%,
+    #505b62 75%,
+    #37393d 87%,
+    #1b1b1b 100%);;
+    background-size: 400% 400%;
+    position: relative;
+    animation: animate 7.5s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    color: #fff;
+    background: rgba(255,255,255,.2);
+    padding: 20px;
+    font-size: 50px;
+    border-radius: 10px;
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}

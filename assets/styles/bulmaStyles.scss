@@ -18,6 +18,7 @@ $secondary-color:#dae8e8;
 $body-background-color:$background;
 
 $primary: $primary-color;
+$light: $headline;
 
 $card-background-color: $primary;
 
@@ -28,7 +29,7 @@ $input-placeholder-color:$headline;
 $input-color:$headline;
 
 
-$navbar-item-img-max-height:7.75rem;
+$navbar-item-img-max-height:5.75rem;
 
 $navbar-background-color : $background;
 $navbar-dropdown-background-color:$background;
@@ -45,6 +46,7 @@ $table-row-hover-background-color:$secondary-color;
 $table-row-active-background-color:$secondary-color;
 
 $title-color: $headline;
+$content-heading-color: $headline;
 
 $tabs-toggle-link-active-background-color:$paragraph;
 $tabs-toggle-link-active-color:$background-dark;
@@ -54,9 +56,14 @@ $input-placeholder-color: $background;
 $input-disabled-background-color: $headline;
 $input-border-color:$background;
 
-$subtitle-color: $paragraph;
+$file-label-border-color: $headline;
+$file-name-border-width: 0px 0px 0px 0;
 
+
+$subtitle-color: $paragraph;
 $footer-background-color: $background;
+
+
 
 
 
@@ -67,18 +74,18 @@ $footer-background-color: $background;
 @import "~bulma/sass/utilities/_all.sass";
 @import "~bulma/sass/base/_all.sass";
 @import "~bulma/sass/form/_all.sass";
+@import "~bulma/sass/layout/_all.sass";
+@import "~bulma/sass/utilities/_all.sass";
+
+
 @import "~bulma/sass/components/navbar.sass";
 @import "~bulma/sass/components/modal.sass";
 @import "~bulma/sass/components/card.sass";
 @import "~bulma/sass/components/message.sass";
 @import "~bulma/sass/components/tabs.sass";
-@import "~bulma/sass/layout/hero.sass";
-@import "~bulma/sass/layout/section.sass";
-@import "~bulma/sass/layout/_all.sass";
-@import "~bulma/sass/elements/content.sass";
-@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/components/media";
 @import "~bulma/sass/grid/columns.sass";
 @import "~bulma/sass/grid/tiles.sass";
-@import "~bulma/sass/elements/container";
+@import "~bulma/sass/helpers/color";
 
 

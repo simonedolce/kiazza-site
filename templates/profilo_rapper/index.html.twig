@@ -1,6 +1,13 @@
 {% extends 'base.html.twig' %}
+{% import "macro/_macro-common.html.twig" as commonMacro %}
 
 {% block title %}Hello ProfiloRapperController!{% endblock %}
+
+{% set immaginePathBanner = '' %}
+
+{% if artista.getBannerProfilo %}
+    {% set immaginePathBanner = '\\' ~ artista.getBannerProfilo.getIdImmagine.getPath ~ "\\" ~ artista.getBannerProfilo.getIdImmagine.getNomeFile %}
+{% endif %}
 
 {% block body %}
     <div class="container padding-mobile" style="margin-top: 1%">
@@ -8,59 +15,48 @@
         <div class="tile is-ancestor">
             <div class="tile is-vertical is-8">
                 <div class="tile">
-                    <div class="tile is-parent">
+                    <div class="tile is-parent is-vertical">
+
+                        <article class="tile is-child">
+                            <figure class="image is-16by9">
+                                <img class="has-ratio" src="{{ immaginePathBanner }}" width="240" height="240">
+                            </figure>
+                        </article>
+
                         <article class="tile is-child">
 
-                            <div>
-                                <figure class="image is-16by9">
-                                    <img class="has-ratio" src="https://i.ytimg.com/vi/c66TfiSbpiU/maxresdefault.jpg" width="240" height="240">
-                                </figure>
-                            </div>
                         </article>
-                        <!--
-                        <div class="tile is-child" style="">
-                            <p class="title">Sonny Purini</p>
-                            <p class="subtitle">Digital Mafia / Kiazza di Sangue</p>
-                        </div>
-                        -->
+
                     </div>
                 </div>
                 <div class="tile is-parent">
                     <article class="tile is-child">
-                        <div class="">
-                            <figure class="image is-16by9">
-                                <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/W_LS_PKqEoQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </figure>
+                        <figure class="image is-16by9">
+                            {{ commonMacro.convertVideoToEmbed(artista.getVideoYoutube) }}
+                        </figure>
+                        <h1 class="title is-1">{{ artista.getNomeArtista }}</h1>
+                        <p class="subtitle is-3">Bio:</p>
+                        <div class="content">
+                            <p class="has-text-light">{{ artista.getBio }}</p>
                         </div>
                     </article>
                 </div>
             </div>
-
             <div class="tile is-parent">
-                <div class="tile is-vertical is-8">
-                    <article class="tile is-child">
+                <article class="tile is-child">
+                    <figure class="image is-1by1">
+                        {{ commonMacro.resolveAvatarPath(artista) }}
+                    </figure>
+                    <div class="content">
+                        <p class="title"></p>
+                        <p class="subtitle"></p>
                         <div class="content">
-                            <p class="biografia-artista" style="text-align: left">Bio:
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae tristique est, porttitor finibus ipsum. Pellentesque eu eleifend orci. Nunc ut justo leo. Pellentesque venenatis augue leo, varius vulputate velit blandit vitae. Aliquam id justo aliqua
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae tristique est, porttitor finibus ipsum. Pellentesque eu eleifend orci. Nunc ut justo leo. Pellentesque venenatis augue leo, varius vulputate velit blandit vitae. Aliquam id justo aliqua
-
-                            </p>
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6jd5B9jelfo5veqrqNEqZz?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/2kyZ6590l3kVf4TxAAMr2w?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                         </div>
-                    </article>
-
-                    <article class="tile is-child">
-                        <div class="content">
-                            <p class="title" style="text-align: center">Album/Singoli:</p>
-                            <div class="content">
-                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7nv1acHdrYXcfLkxVncgzv?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1VQpxFFAYMsUmhsAnG4ls0?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
+                    </div>
+                </article>
             </div>
-
         </div>
 
     </div>

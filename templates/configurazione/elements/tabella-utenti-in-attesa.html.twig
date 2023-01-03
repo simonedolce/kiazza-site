@@ -3,10 +3,34 @@
     <tr>
         <td>CodAuth</td>
         <td>Nome Provvisorio</td>
+        <td>Ruoli</td>
+        <td>Azioni</td>
     </tr>
     </thead>
     <tbody>
-    <tr>
-    </tr>
+    {% for codice in codAuths %}
+        <tr id="tr-cod-auth-{{ codice.id }}">
+            <td>{{ codice.codice }}</td>
+            <td>{{ codice.usernameProvvisorio }}</td>
+            <td>{{ codice.ruolo }}</td>
+            <td>
+                <button id="{{ codice.id }}" data-target="modal-conferma-eliminazione" class="js-modal-trigger elimina-cod-auth button is-danger">
+                    Elimina
+                </button>
+            </td>
+        </tr>
+    {% endfor %}
     </tbody>
 </table>
+
+<div id="modal-conferma-eliminazione" class="modal">
+    <div class="modal-background"></div>
+    <button class="modal-close is-large" aria-label="close"></button>
+    <div class="modal-content">
+        <div class="box modal-box">
+            Confermi l'eliminazione dell'utenza ?
+        </div>
+        <button class="conferma-elimina button is-danger">Conferma</button>
+        <button class="button is-link">Annulla</button>
+    </div>
+</div>

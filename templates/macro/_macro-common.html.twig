@@ -1,0 +1,12 @@
+{% macro resolveAvatarPath(user) %}
+    {% set path = '' %}
+    {% if user.getAvatar %}
+        {% set path = "\\" ~ user.getAvatar.getIdImmagine.getPath ~ "\\" ~ user.getAvatar.getIdImmagine.getNomeFile %}
+    {% endif %}
+    <img src="{{ path }}">
+{% endmacro %}
+
+
+{% macro convertVideoToEmbed(url) %}
+    <iframe class="has-ratio" width="640" height="360" src="{{ url|replace({'watch?v=':'embed/'}) }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% endmacro %}

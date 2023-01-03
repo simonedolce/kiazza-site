@@ -3,12 +3,17 @@
 {% block title %}KIAZZA MOB ENT.®{% endblock %}
 
 {% block body %}
+<div class="container padding-mobile">
+    {% include('home_page/elements/notification.html.twig') %}
+
+</div>
 
 
-
-{% include('home_page/elements/carosello.html.twig') %}
 
 <div class="container padding-mobile">
+
+    {% include('home_page/elements/carosello.html.twig') %}
+
     {% include('home_page/elements/sections-1.html.twig') %}
     {% include('home_page/elements/artist-card.html.twig') %}
     {% include('home_page/elements/artist-card.html.twig') %}

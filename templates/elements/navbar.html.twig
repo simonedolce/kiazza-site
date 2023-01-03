@@ -21,6 +21,14 @@
 
     });
 </script>
+
+{% set immaginePathAvatar = '' %}
+
+
+{% if app.user.getAvatar.getIdImmagine is defined %}
+    {% set immaginePathAvatar = app.user.getAvatar.getIdImmagine.getPath ~ "\\" ~ app.user.getAvatar.getIdImmagine.getNomeFile %}
+{% endif %}
+
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item">
@@ -41,21 +49,17 @@
             </a>
 
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">Rappers</a>
-
+                <a class="navbar-link">Artisti</a>
                 <div class="navbar-dropdown is-right">
-                    <a class="navbar-item" href="{{ path('visualizza_profilo_artista') }}">
-                        Sonny Purini
+                    {% for user in app.session.get('usersList') %}
+                    <a class="navbar-item" href="{{ path('visualizza_profilo_artista', {id:user.getId}) }}">
+                        {% if user.getNomeArtista == '' %}
+                            {{ user.getUsername }}
+                        {% else %}
+                            {{ user.getNomeArtista }}
+                        {% endif %}
                     </a>
-                    <a class="navbar-item">
-                        Karlino Princip
-                    </a>
-                    <a class="navbar-item">
-                        Zeboh Fus
-                    </a>
-                    <a class="navbar-item">
-                        Uzi El Cuervo
-                    </a>
+                    {% endfor %}
                     <hr class="navbar-divider">
                     <a class="navbar-item">
                         Contattaci
@@ -63,36 +67,38 @@
                 </div>
             </div>
 
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">Profilo</a>
-                <div class="navbar-dropdown is-left">
-                    <a class="navbar-item" href="{{ path('modifica_profilo_artista') }}">
-                        Modifica Pagina Personale
-                    </a>
-                    <a class="navbar-item" href="{{ path('aggiungi_album') }}">
-                        Aggiungi Album
-                    </a>
+            {% if app.user and 'ROLE_ADMIN' in app.user.roles  %}
+                <div class="navbar-item">
+                    <a class="navbar-item" href="{{ path('index_configurazione') }}">Amministrazione</a>
                 </div>
-            </div>
-
-            <div class="navbar-item is-hoverable">
-                <a class="navbar-link" href="{{ path('index_configurazione') }}">Amministrazione</a>
-            </div>
+            {% endif %}
 
         </div>
 
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-primary">
-                        <strong>Registrati</strong>
-                    </a>
-                    <a class="button is-light">
-                        Accedi
-                    </a>
+        {% if app.user %}
+            <div class="navbar-end ">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <article class="media" style="align-items: center">
+                        <figure class="image is-48x48 media-left">
+                            <img class="is-rounded" src="{{ asset(immaginePathAvatar) }}">
+                        </figure>
+                        <div class="media-content">
+                            <a class="navbar-link media-right">{{ app.user.getUsername() }}</a>
+                        </div>
+                    </article>
+                    <div class="navbar-dropdown is-right">
+                        <a class="navbar-item" href="{{ path('modifica_profilo_artista') }}">
+                            Modifica Pagina Personale
+                        </a>
+                        <a class="navbar-item" href="{{ path('aggiungi_album') }}">
+                            Aggiungi Album
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item" href="{{ path('app_logout') }}">Logout</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endif %}
     </div>
 </nav>
 
